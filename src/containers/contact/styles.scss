@@ -90,13 +90,13 @@ color: white;
   font-size: 16px;
 }
 
-// .inputName label,
-// .inputEmail label,
-// .inputDescription label {
+.inputName label,
+.inputEmail label,
+.inputDescription label {
  
-//   transform: translate(-50%, -50%);
-//   transition: top 0.3s, left 0.3s;
-// }
+  transform: translate(-50%, -50%);
+  transition: top 0.3s, left 0.3s;
+}
 
 .inputName input:focus + label,
 .inputEmail input:focus + label,
@@ -130,19 +130,19 @@ color: white;
   transform: scale(1.2);
 }
 
-// .contact__image::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: linear-gradient(to left, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0) 100%);
-//   border-radius: 50px;
-//   z-index: 1;
-//   transform: perspective(1000px) rotateY(-20deg);
+.contact__image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 50px;
+  z-index: 1;
+  transform: perspective(1000px) rotateY(-20deg);
 
-// }
+}
 
 .contact__text {
   padding: 20px;

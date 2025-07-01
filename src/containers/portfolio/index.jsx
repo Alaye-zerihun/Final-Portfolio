@@ -4,8 +4,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import ImageOne from "../../images/Netflix.png";
 import ImageTwo from "../../images/amazon.jpg";
 import ImageThree from "../../images/Evangadi-forum.png";
-import ImageFour from "../../images/Employee.png";
-import ImageFive from "../../images/Expense-tracker.png";
+
 import "./styles.scss";
 import { useState } from "react";
 
@@ -24,21 +23,9 @@ const portfolioData = [
   },
   {
     id: 3,
-    name: "Evangadi Fourem",
+    name: "Evangadi Forum",
     image: ImageThree,
     link: "https://nebagit.github.io/login",
-  },
-  {
-    id: 4,
-    name: "Employee Mgt system",
-    image: ImageFour,
-    link: "https://nebagit.github.io/Employee-mgt-syst/",
-  },
-  {
-    id: 5,
-    name: "Student Expense Tracker",
-    image: ImageFive,
-    link: "https://youtu.be/wD-E0Rqlr5k",
   },
 ];
 

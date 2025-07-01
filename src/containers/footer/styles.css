@@ -1,0 +1,97 @@
+/* Footer link styles */
+.footer__col2 a,
+.footer__col3 a,
+.footer__col4 a {
+  text-decoration: none;
+  color: grey;
+  transition: color 0.3s ease;
+}
+
+.footer__col2 a:hover,
+.footer__col3 a:hover,
+.footer__col4 a:hover {
+  color: black;
+}
+
+/* Footer list styles */
+.footer__col2 ul,
+.footer__col3 ul,
+.footer__col4 ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* General container styling */
+.container {
+  border-radius: 30px;
+  padding: 20px;
+}
+
+/* Column title spacing */
+.footer__col__title {
+  margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Copyright section styles */
+.copyright {
+  background-color: var(--dark-bg);
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
+}
+
+.cr1,
+.cr2,
+.cr3 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Icon container */
+.home__icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+/* Contact icon style */
+.contact-icon {
+  font-size: 30px;
+  color: green;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-icon:hover {
+  transform: scale(1.1);
+  color: black;
+}
+
+/* Column padding */
+.footer__col1,
+.footer__col2,
+.footer__col3,
+.footer__col4 {
+  margin-bottom: 30px;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home__icons {
+    justify-content: center;
+  }
+
+  .footer__col1 {
+    margin-left: 0;
+  }
+}

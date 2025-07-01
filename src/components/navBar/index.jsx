@@ -13,7 +13,7 @@ const navLinks = [
   { label: "Services", to: "services" },
   { label: "Portfolio", to: "portfolio" },
   { label: "Recommendation", to: "testimonials" },
-  { label: "Contact", to: "contact" }
+  { label: "Contact", to: "contact" },
 ];
 
 const Navbar = () => {
@@ -55,15 +55,16 @@ const Navbar = () => {
       className="navbar"
       style={{
         backgroundColor: activeSection
-          ? getComputedStyle(document.getElementById(activeSection))?.backgroundColor || "#111"
+          ? getComputedStyle(document.getElementById(activeSection))
+              ?.backgroundColor || "#111"
           : "#111",
-        color: navbarTextColor
+        color: navbarTextColor,
       }}
     >
       <div className="navbar__container">
         <Link
           to="home"
-          className="navbar__container__logo"
+          className="navbar__logo"
           smooth={true}
           duration={600}
           onClick={handleLinkClick}
@@ -71,16 +72,16 @@ const Navbar = () => {
           <img src={homeicon} alt="Home Icon" height={50} />
         </Link>
 
-        <ul className={`navbar__container__menu ${toggleIcon ? "active" : ""}`}>
+        <ul className={`navbar__menu ${toggleIcon ? "active" : ""}`}>
           {navLinks.map((item, index) => (
             <li
               key={index}
-              className={`navbar__container__menu__item ${
+              className={`navbar__menu-item ${
                 activeSection === item.to ? "active" : ""
               }`}
             >
               <Link
-                className="navbar__container__menu__item__links"
+                className="navbar__menu-link"
                 to={item.to}
                 spy={true}
                 smooth={true}

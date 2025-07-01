@@ -13,7 +13,7 @@ const portfolioData = [
     id: 1,
     name: "Netflix",
     image: ImageOne,
-    link: "https://nebagit.github.io/Netflix-clone-neba/",
+    link: "https://github.com/Alaye-zerihun/Netflix-by-alex",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const portfolioData = [
     id: 3,
     name: "Evangadi Forum",
     image: ImageThree,
-    link: "https://nebagit.github.io/login",
+    link: "https://github.com/Alaye-zerihun",
   },
 ];
 

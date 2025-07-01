@@ -35,8 +35,8 @@ const Home = () => {
     import("../../images/2121.jpg"),
     import("../../images/favoriteimg1.jpg"),
     import("../../images/2121.jpg"),
-    import("../../images/AI.jpg"),
-    import("../../images/graphfull.png"),
+  /*   import("../../images/AI.jpg"), */
+  /*   import("../../images/graphfull.png"), */
     import("../../images/meanandmern.jpg"),
   ];
 
@@ -104,23 +104,23 @@ const Home = () => {
         }}
       >
        <div className="home__icons">
-      <a href="https://github.com/Nebagit" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Alaye-zerihun" target="_blank" rel="noopener noreferrer">
         <FaGithub className="contact-icon" />
       </a>
-      <a href="https://www.linkedin.com/in/nebiyu-tefera-aau/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/abinet-zerihun/" target="_blank" rel="noopener noreferrer">
         <FaLinkedin className="contact-icon" />
       </a>
-      <a href="tel:+251923536007">
+      <a href="tel:+251913190463">
         <FaPhone className="contact-icon" />
       </a>
-      <a href="mailto:nebiyutefera2112@gmail.com">
+      <a href="mailto:abinetzerihun0@gmail.com">
         <FaEnvelope className="contact-icon" />
       </a>
     </div>
-        <div className="home__contact-me">
+       {/*  <div className="home__contact-me">
           <button onClick={handleNavigateToContactMePage}>Hire Me</button>
         </div>
-        {/* <div className="resume__cv"><button onClick={handleDownload} className="download-button">Download CV</button></div> */}
+       */}
 
       </Animate>
     </section>

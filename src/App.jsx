@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import Navbar from "./components/navBar/";
 import Home from "./containers/home/";
 import About from "./containers/about";
-import Resume from "./containers/resume";
+// import Resume from "./containers/resume";
 import Skills from "./containers/skills";
 import Portfolio from "./containers/portfolio";
 import Contact from "./containers/contact";
@@ -66,9 +66,9 @@ function App() {
         <About />
       </div>
 
-      <div ref={sections.resume} id="resume" className="section resume animate-on-scroll">
+      {/* <div ref={sections.resume} id="resume" className="section resume animate-on-scroll">
         <Resume />
-      </div>
+      </div> */}
 
       <div ref={sections.skills} id="skills" className="section skills animate-on-scroll">
         <Skills />

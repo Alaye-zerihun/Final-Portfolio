@@ -133,17 +133,17 @@ export default function Footer() {
             links={[
               {
                 title: "LinkedIn",
-                path: "https://www.linkedin.com/in/nebiyu-tefera-aau/",
+                path: "https://www.linkedin.com/in/abinet-zerihun/",
                 icon: <FaLinkedin style={{ color: "black" }} />,
               },
               {
                 title: "Github",
-                path: "https://github.com/Nebagit",
+                path: "https://github.com/Alaye-zerihun",
                 icon: <FaGithub style={{ color: "black" }} />,
               },
               {
                 title: "Telegram",
-                path: "https://t.me/Tatuye",
+                path: "https://t.me/Abenet2127",
                 icon: <FaTelegram style={{ color: "black" }} />,
               },
             ]}
@@ -155,14 +155,14 @@ export default function Footer() {
         <div className="container" style={{ fontFamily: "'Caveat', cursive" }}>
           <div className="home__icons">
             <a
-              href="https://github.com/Nebagit"
+              href="https://github.com/ALaye-zerihun"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaGithub className="contact-icon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/nebiyu-tefera-aau/"
+              href="https://www.linkedin.com/in/abinet-zerihun/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -171,11 +171,11 @@ export default function Footer() {
             <a href="tel:+251923536007">
               <FaPhone className="contact-icon" />
             </a>
-            <a href="mailto:nebiyutefera2112@gmail.com">
+            <a href="mailto:abinetzerihun0@gmail.com">
               <FaEnvelope className="contact-icon" />
             </a>
             <a
-              href="https://t.me/Tatuye"
+              href="https://t.me/biruke"
               target="_blank"
               rel="noopener noreferrer"
             >

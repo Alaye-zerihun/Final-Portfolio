@@ -1,141 +1,122 @@
-/* Updated CSS for the Testimonial Slider */
+/* Updated and Beautified Testimonial Section CSS */
+
+.testimonial {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
 
 .section__title {
-  font-size: 32px; /* Adjust the font size for the title */
-  font: bold; /* Set the title as bold */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-top: 20px; /* Adjust top padding as needed */
-  height: 100%;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
 }
 
 .section__subtitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-top: 20px; /* Adjust top padding as needed */
-  height: 100%;
-  font-size: 18px; /* Adjust the font size for the subtitle */
-  font: bold; /* Set the subtitle as bold */
-  color: #666; /* Update the color for better readability */
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
-.testimonial__content {
-  text-align: center;
-  margin-bottom: 20px; /* Adjust as needed */
-  /* z-index: 9999; */
+.recommendation-icon {
+  font-size: 60px;
+  color: rgb(253, 187, 18);
+  margin: 10px auto 30px auto;
+}
+
+.swiper-slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.testimonial__card {
+  background-color: #fafafa;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial__card:hover {
+  transform: scale(1.02);
+}
+
+.testimonial__img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgb(253, 187, 18);
+  margin-bottom: 1rem;
+}
+
+.testimonial__name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.testimonial__description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.testimonials-contact {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2b9348;
 }
 
 .testimonial__navigation {
   margin-top: 30px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonial__prev,
+.testimonial__next,
+.testimonial__pause,
+.testimonial__play {
+  font-size: 26px;
   color: rgb(253, 187, 18);
-  font-size: 40px;
-  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.testimonial__card {
-  background-color: #f9f9f9; /* Update background color */
-  padding: 1.5rem 2rem;
-  border-radius: 10px;
-  text-align: center; /* Center align the content */
+.testimonial__prev:hover,
+.testimonial__next:hover,
+.testimonial__pause:hover,
+.testimonial__play:hover {
+  transform: scale(1.2);
 }
 
-.testimonial__img {
-  width: 200px;
-  height: 200px;
-  object-fit: ; /* Update object-fit for better image display */
-  border-radius: 50%; /* Make the image circular */
-  /* margin-bottom: 10px; */
-}
-
-.recommendation-icon {
-  font-size: 100px;
-  font-weight: bold;
-  color: rgb(253, 187, 18);
-}
-
-.testimonial__name {
-  font-size: 20px; /* Increase the font size for the name */
-  font-weight: bold; /* Set the name as bold */
-  margin-bottom: 10px; /* Adjust the spacing */
-}
-
-.testimonial__description {
-  font-size: 16px; /* Decrease the font size for the description */
-  color: #555; /* Update text color for better readability */
-  margin-bottom: 10px; /* Adjust the spacing */
-}
-
-.testimonials-contact {
-  font-size: 16px;
-  color: green;
-  font-weight: bold;
-}
-
-/* Media query for devices with a maximum width of 768px (commonly used for tablets and smaller devices) */
 @media screen and (max-width: 768px) {
-  .testimonial-whole {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Ensure the container takes full width */
-  }
-
-  .testimonial__content {
-    text-align: center;
-    /* margin-bottom: 20px; */
-    width: 100%; /* Ensure the content takes full width */
-  }
-
   .section__title {
     font-size: 28px;
-    font-weight: bold;
   }
 
   .section__subtitle {
     font-size: 16px;
-    color: #666;
-    font-weight: bold;
-  }
-
-  .swiper-slider {
-    width: 100%; /* Ensure the slider takes full width */
-    display: flex;
-    justify-content: center;
   }
 
   .testimonial__card {
-    background-color: #f9f9f9; /* Update background color */
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    text-align: center; /* Center align the content */
+    padding: 1.5rem 1.25rem;
+  }
+
+  .testimonial__img {
+    width: 120px;
+    height: 120px;
   }
 
   .testimonial__navigation {
-    margin-top: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    color: rgb(253, 187, 18);
-    font-size: 40px;
-    font-weight: bold;
-  }
-
-  .testimonial__prev,
-  .testimonial__pause,
-  .testimonial__play,
-  .testimonial__next {
-    font-size: 30px;
-    /* margin: 0 10px; */
+    font-size: 22px;
   }
 }

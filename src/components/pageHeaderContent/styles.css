@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 2px dashed var(--yellow-theme-main-color);
+  /* background-color: #1e1e1e; subtle background for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-header {
+  flex: 1;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  text-transform: capitalize;
+  color: var(--yellow-theme-main-color);
+  text-align: center;
+}
+
+.wrapper span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgba(253, 187, 18, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.wrapper span:hover {
+  transform: scale(1.1);
+}
+
+.wrapper span svg {
+  color: var(--yellow-theme-main-color);
+  width: 32px;
+  height: 32px;
+}

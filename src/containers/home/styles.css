@@ -1,0 +1,131 @@
+:root {
+  --main-yellow: #FFB703;
+  --main-lime: #D4F900;
+  --overlay-dark: rgba(0, 0, 0, 0.85);
+  --overlay-mid: rgba(0, 0, 0, 0.6);
+  --overlay-light: rgba(0, 0, 0, 0.3);
+  --text-color: var(--main-yellow);
+  --text-highlight: var(--main-lime);
+  --btn-bg: transparent;
+  --btn-border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Home Section */
+.home {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  color: var(--text-color);
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 183, 3, 0.1), transparent 60%),
+              radial-gradient(circle at 20% 70%, rgba(212, 249, 0, 0.08), transparent 60%),
+              linear-gradient(to bottom, #1e1e2f 0%, #101018 100%);
+}
+
+/* Glowing background overlay if needed */
+.constant-black-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--overlay-dark) 0%,
+    var(--overlay-mid) 50%,
+    var(--overlay-dark) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home__text-wrapper {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.home__text-wrapper h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+}
+
+.blinking-cursor {
+  animation: blink 1.2s infinite;
+  font-weight: 600;
+  color: var(--text-highlight);
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.home__icons {
+  display: none; /* Hiding icons per your latest request */
+}
+
+.home__contact-me {
+  display: none; /* Removed from Home - moved to Footer/Contact */
+}
+
+.btn-primary {
+  padding: 0.8rem 2.5rem;
+  font-size: 1.6rem;
+  border: 2px solid var(--text-color);
+  background: var(--btn-bg);
+  color: var(--text-color);
+  font-weight: 600;
+  border-radius: var(--btn-border-radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--text-color);
+  color: #000;
+  outline: none;
+}
+
+@media (max-width: 550px) {
+  .home__text-wrapper h1 {
+    font-size: 2.5rem;
+  }
+  .btn-primary {
+    font-size: 1.4rem;
+    padding: 0.6rem 2rem;
+  }
+}
+
+@media (min-width: 551px) and (max-width: 768px) {
+  .home__text-wrapper h1 {
+    font-size: 3.5rem;
+  }
+  .btn-primary {
+    font-size: 1.5rem;
+    padding: 0.7rem 2.2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 990px) {
+  .home__text-wrapper h1 {
+    font-size: 5rem;
+  }
+}

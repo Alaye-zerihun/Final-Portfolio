@@ -1,0 +1,197 @@
+/* styles.css */
+
+/* === Root Variables for Theming === */
+:root {
+  --background-black: #1a1a1a;
+  --text-white: #fff;
+  --primary-color: #e74c3c;
+  --card-bg: #2c3e50;
+  --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 15px 40px rgba(231, 76, 60, 0.4);
+  --radius: 10px;
+  --transition-speed: 0.3s ease;
+}
+
+/* === Portfolio Section === */
+.portfolio {
+  padding: 100px 20px 40px;
+  background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  color: var(--text-white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 26, 26, 0.7); /* Dark overlay for readability */
+  z-index: 0;
+}
+
+.portfolio > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Portfolio Filters === */
+.portfolio__filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  background: rgba(44, 62, 80, 0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+}
+
+.portfolio__filters li {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.portfolio__filters li.active,
+.portfolio__filters li:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+/* === Portfolio Cards === */
+.portfolio__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.portfolio__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: var(--card-bg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+}
+
+.portfolio__card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.portfolio__card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  transition: filter 0.3s ease;
+}
+
+.portfolio__card:hover img {
+  filter: brightness(1.1);
+}
+
+.portfolio__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.portfolio__overlay.visible {
+  opacity: 1;
+}
+
+.portfolio__overlay p {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}
+
+.portfolio__overlay button {
+  padding: 10px 25px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform var(--transition-speed), box-shadow 0.3s ease;
+  text-transform: uppercase;
+}
+
+.portfolio__overlay button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
+}
+
+/* === Responsive Adjustments === */
+@media only screen and (max-width: 768px) {
+  .portfolio {
+    padding: 80px 10px 30px;
+  }
+
+  .portfolio__filters {
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  .portfolio__filters li {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  .portfolio__cards {
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .portfolio__overlay p {
+    font-size: 1.2rem;
+  }
+
+  .portfolio__overlay button {
+    padding: 8px 20px;
+  }
+}
+
+/* === Accessibility and Smart Features === */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio__filters li,
+  .portfolio__card,
+  .portfolio__card img,
+  .portfolio__overlay,
+  .portfolio__overlay button {
+    transition: none !important;
+  }
+  .portfolio__card:hover,
+  .portfolio__filters li:hover,
+  .portfolio__overlay button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

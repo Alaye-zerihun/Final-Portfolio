@@ -12,58 +12,96 @@ import {
 } from "react-icons/fa";
 
 const FooterStyle = styled.div`
-  background-color: var(--yellow-theme-main-color);
-  padding-top: 10rem;
+  background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+  padding: 10rem 2rem 5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
   .container {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .footer__col {
-    line-height: 1.8; /* Adjust line height as needed */
+    line-height: 1.8;
+    transition: transform 0.3s ease;
   }
-
+  .footer__col:hover {
+    transform: translateY(-5px);
+  }
   .footer__col1 {
     flex: 2;
   }
   .footer__col__title {
-    font-size: 3rem; /* Adjust font size of headers */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #e74c3c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   .footer__col2,
   .footer__col3,
   .footer__col4 {
     flex: 1;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .footer__col1__title {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
   }
   .copyright {
-    background-color: var(--dark-bg);
-    text-align: left;
-    padding: 1rem 0;
-    margin-top: 5rem;
+    background: linear-gradient(90deg, #2c3e50, #1a1a1a);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     .para {
-      margin-left: 0;
+      margin: 0;
+      color: #dcdcdc;
+      font-size: 1.4rem;
+    }
+    .home__icons {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .contact-icon {
+      font-size: 2rem;
+      color: #fff;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .contact-icon:hover {
+      color: #e74c3c;
+      transform: scale(1.2);
     }
   }
   @media only screen and (max-width: 768px) {
+    padding: 8rem 1rem 4rem;
     .container {
       flex-direction: column;
-      gap: 0rem;
+      gap: 3rem;
       & > div {
-        margin-top: 5rem;
+        margin-top: 0;
+        text-align: center;
       }
     }
-    .footer__col1 .para {
-      max-width: 100%;
+    .footer__col__title {
+      font-size: 2rem;
     }
-    .copyright {
-      .container {
-        div {
-          margin-top: 0;
-        }
-      }
+    .footer__col1__title {
+      font-size: 2.8rem;
+    }
+    .copyright .home__icons {
+      flex-direction: column;
+      gap: 1rem;
     }
   }
 `;
@@ -81,17 +119,11 @@ export default function Footer() {
 
   return (
     <FooterStyle>
-      <div
-        className="container"
-        style={{ fontFamily: "'Lobster', sans-serif" }}
-      >
+      <div className="container">
         <div className="footer__col1">
           <h1 className="footer__col1__title">Alaye Zerihun</h1>
           <PText>
-            As a dedicated full stack developer in React, Next.js, Node.js, and
-            Express, I am passionate about creating innovative solutions. With a
-            keen enthusiasm for rapidly mastering new technologies, I am
-            committed to delivering high-quality, cutting-edge development work.
+            As a dedicated full stack developer specializing in React, Next.js, Node.js, and Express, I am passionate about crafting innovative, high-quality solutions. With an insatiable curiosity for mastering cutting-edge technologies, I strive to push the boundaries of modern development.
           </PText>
         </div>
         <div className="footer__col2">
@@ -105,87 +137,63 @@ export default function Footer() {
               { title: "Portfolio", path: "portfolio" },
               { title: "Contact", path: "contact" },
             ]}
-            handleClick={scrollToSection} // Pass the scroll function to FooterCol
+            handleClick={scrollToSection}
           />
         </div>
         <div className="footer__col3">
           <FooterCol
             heading="Contact Info"
             links={[
-              {
-                title: "+2519-13-19-04-63",
-            
-              },
-              {
-                title: "Alaye93@gmail.com",
-                
-              },
-              {
-                title: "Ethiopia, Addis Ababa, 5 Kilo france around egypt empassy ",
-              
-              },
+              { title: "+251 913 190 463", path: "tel:+251913190463" },
+              { title: "alaye93@gmail.com", path: "mailto:alaye93@gmail.com" },
+              { title: "Ethiopia, Addis Ababa, 5 Kilo near Egypt Embassy", path: "#" },
             ]}
           />
         </div>
         <div className="footer__col4">
           <FooterCol
-            heading="social Links"
+            heading="Social Links"
             links={[
               {
                 title: "LinkedIn",
                 path: "https://www.linkedin.com/in/abinet-zerihun/",
-                icon: <FaLinkedin style={{ color: "black" }} />,
+                icon: <FaLinkedin />,
               },
               {
                 title: "Github",
                 path: "https://github.com/Alaye-zerihun",
-                icon: <FaGithub style={{ color: "black" }} />,
+                icon: <FaGithub />,
               },
               {
                 title: "Telegram",
                 path: "https://t.me/Abenet2127",
-                icon: <FaTelegram style={{ color: "black" }} />,
+                icon: <FaTelegram />,
               },
             ]}
           />
         </div>
       </div>
-
       <div className="copyright">
-        <div className="container" style={{ fontFamily: "'Caveat', cursive" }}>
+        <div className="container">
           <div className="home__icons">
-            <a
-              href="https://github.com/ALaye-zerihun"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/Alaye-zerihun" target="_blank" rel="noopener noreferrer">
               <FaGithub className="contact-icon" />
             </a>
-            <a
-              href="https://www.linkedin.com/in/abinet-zerihun/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/abinet-zerihun/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="contact-icon" />
             </a>
-            <a href="tel:+251923536007">
+            <a href="tel:+251913190463">
               <FaPhone className="contact-icon" />
             </a>
-            <a href="mailto:abinetzerihun0@gmail.com">
+            <a href="mailto:alaye93@gmail.com">
               <FaEnvelope className="contact-icon" />
             </a>
-            <a
-              href="https://t.me/biruke"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://t.me/Abenet2127" target="_blank" rel="noopener noreferrer">
               <FaTelegram className="contact-icon" />
             </a>
           </div>
-
           <PText>'The best way to predict the future is to create it.'</PText>
-          <PText>© 2025 Developed by Alaye Zerihun</PText>
-          <PText>All rights reserved</PText>
+          <PText>© 2025 Developed by Alaye Zerihun | All rights reserved</PText>
         </div>
       </div>
     </FooterStyle>

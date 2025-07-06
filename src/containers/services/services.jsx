@@ -13,7 +13,7 @@ import { MdWeb } from "react-icons/md";
 const servicesData = [
   {
     id: 1,
-    icon: <MdWeb className="services__icon" />,
+    icon: <MdWeb className="services__icon" aria-hidden="true" />,
     title: "Full Stack Web Developer",
     description:
       "Craft seamless web experiences blending front-end aesthetics with back-end functionality, ensuring robust development and user satisfaction.",
@@ -28,7 +28,7 @@ const servicesData = [
   },
   {
     id: 2,
-    icon: <FaCode className="services__icon" />,
+    icon: <FaCode className="services__icon" aria-hidden="true" />,
     title: "Software Engineer",
     description:
       "Engineer elegant and efficient software solutions across platforms, driving innovation through meticulous testing and best practices.",
@@ -44,7 +44,7 @@ const servicesData = [
   },
   {
     id: 3,
-    icon: <FaLightbulb className="services__icon" />,
+    icon: <FaLightbulb className="services__icon" aria-hidden="true" />,
     title: "ICT Consultant",
     description:
       "Offer strategic guidance on emerging technologies and empower digital transformation for competitive advantage.",
@@ -77,50 +77,74 @@ const Services = () => {
   }, [activeModal]);
 
   return (
-    <section className="services section" id="services">
-      <h2 className="section__title">Services</h2>
+    <section className="services section" id="services" aria-labelledby="services-title">
+      <h2 className="section__title" id="services-title">Services</h2>
       <span className="section__subtitle">What I do</span>
 
-      <div className="services-icons-container">
+      <div className="services-icons-container" aria-hidden="true">
         <FaTools />
       </div>
 
       <div className="services__container container grid">
         {servicesData.map((service) => (
-          <div key={service.id} className="services__content">
+          <article
+            key={service.id}
+            className="services__content"
+            tabIndex={0}
+            aria-describedby={`service-desc-${service.id}`}
+            aria-haspopup="dialog"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") setActiveModal(service.id);
+            }}
+          >
             <div>
               {service.icon}
-              <h3 className="services__title">
-                {service.title.split(" ").slice(0, -1).join(" ")}
-                <br />
-                {service.title.split(" ").slice(-1)}
-              </h3>
+              <h3 className="services__title">{service.title}</h3>
             </div>
 
             <button
               className="services__button"
               onClick={() => setActiveModal(service.id)}
+              aria-expanded={activeModal === service.id}
+              aria-controls={`modal-${service.id}`}
             >
               View More
               <FaArrowRight className="services__button-icon" />
             </button>
 
             {activeModal === service.id && (
-              <div className="services__modal active-modal">
-                <div className="services__modal-content" role="dialog">
-                  <FaTimes
+              <div
+                id={`modal-${service.id}`}
+                className="services__modal active-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={`modal-title-${service.id}`}
+                aria-describedby={`modal-desc-${service.id}`}
+              >
+                <div className="services__modal-content">
+                  <button
                     className="services__modal-close"
                     onClick={closeModal}
                     aria-label="Close modal"
-                  />
-                  <h3 className="services__modal-title">{service.title}</h3>
-                  <p className="services__modal-description">
+                  >
+                    <FaTimes />
+                  </button>
+                  <h3 className="services__modal-title" id={`modal-title-${service.id}`}>
+                    {service.title}
+                  </h3>
+                  <p
+                    className="services__modal-description"
+                    id={`modal-desc-${service.id}`}
+                  >
                     {service.description}
                   </p>
                   <ul className="services__modal-services grid">
                     {service.details.map((item, idx) => (
-                      <li className="services__modal-service" key={idx}>
-                        <FaCheckCircle className="services__modal-icon" />
+                      <li
+                        className="services__modal-service"
+                        key={idx}
+                      >
+                        <FaCheckCircle className="services__modal-icon" aria-hidden="true" />
                         <p className="services__modal-info">{item}</p>
                       </li>
                     ))}
@@ -128,7 +152,7 @@ const Services = () => {
                 </div>
               </div>
             )}
-          </div>
+          </article>
         ))}
       </div>
     </section>

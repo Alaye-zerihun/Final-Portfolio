@@ -1,42 +1,42 @@
 import { Line } from "rc-progress";
 import React, { useEffect, useState } from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
-import { Animate, AnimateKeyframes } from "react-simple-animate";
-import PageHeaderContent from "../../components/pageHeaderContent";
+import PageHeaderContent from "../../components/pageHeaderContent/index";
 import CountUp from "react-countup";
+import "./styles.css";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const skillsData = [
     {
-      label: "FULL STACK",
+      label: "Full Stack",
       data: [
-        { skillName: "HTML, CSS & JAVASCRIPT", percentage: 98 },
-        { skillName: "REACT.JS", percentage: 90 },
-        { skillName: "ANGULAR.JS", percentage: 50 },
-        { skillName: "NODE.JS", percentage: 90 },
-        { skillName: "FIREBASE", percentage: 90 },
+        { skillName: "HTML, CSS & JavaScript", percentage: 98 },
+        { skillName: "React.js", percentage: 90 },
+        { skillName: "Angular.js", percentage: 50 },
+        { skillName: "Node.js", percentage: 90 },
+        { skillName: "Firebase", percentage: 90 },
         { skillName: "PHP", percentage: 80 },
       ],
     },
     {
-      label: "DATABASES",
+      label: "Databases",
       data: [
         { skillName: "SQL", percentage: 70 },
-        { skillName: "MONGO DB", percentage: 70 },
-        { skillName: "MYSQL", percentage: 85 },
-        { skillName: "EXPRESS", percentage: 60 },
+        { skillName: "MongoDB", percentage: 70 },
+        { skillName: "MySQL", percentage: 85 },
+        { skillName: "Express", percentage: 60 },
       ],
     },
     {
-      label: "PROGRAMMING LANGUAGES",
+      label: "Programming Languages",
       data: [
         { skillName: "C++", percentage: 90 },
-        { skillName: "C# (.Net)", percentage: 70 },
-        { skillName: "PYTHON", percentage: 70 },
-        { skillName: "JAVA", percentage: 85 },
-        { skillName: "DART/(Flutter)", percentage: 85 },
+        { skillName: "C# (.NET)", percentage: 70 },
+        { skillName: "Python", percentage: 70 },
+        { skillName: "Java", percentage: 85 },
+        { skillName: "Dart (Flutter)", percentage: 85 },
       ],
     },
   ];
@@ -51,64 +51,47 @@ const Skills = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="skills" aria-label="Skills Section">
       <PageHeaderContent
         headerText="My Skills"
         icon={<BsInfoCircleFill size={40} />}
       />
-      <div className="skills__content-wrapper">
-        {skillsData.map((item) => (
-          <div key={item.label} className="skills__content-wrapper__inner-content">
-            <Animate
-              play
-              duration={1}
-              delay={0.3}
-              start={{ transform: "translateX(-200px)" }}
-              end={{ transform: "translateX(0px)" }}
-            >
-              <h3 className="skills__content-wrapper__inner-content__category-text">
-                {item.label}
-              </h3>
-              <div className="skills__content-wrapper__inner-content__progressbar-container">
-                {item.data.map((skillItem) => (
-                  <AnimateKeyframes
-                    key={skillItem.skillName}
-                    play
-                    duration={4}
-                    keyframes={["opacity : 1", "opacity : 0"]}
-                    iterationCount="1"
-                  >
-                    <div className="progressbar-wrapper">
-                      <p>{skillItem.skillName}</p>
-                      <div className="progress-bar">
-                        <div
-                          className="filling-bar"
-                          style={{
-                            width: isVisible ? `${skillItem.percentage}%` : 0,
-                          }}
-                        />
-                      </div>
-                      {isVisible && (
-                        <CountUp
-                          start={0}
-                          end={skillItem.percentage}
-                          duration={7}
-                          suffix="%"
-                          style={{ fontSize: "24px" }}
-                        />
-                      )}
-                    </div>
-                  </AnimateKeyframes>
-                ))}
+      <div className="skills__grid">
+        {skillsData.map((category) => (
+          <article className="skill-card" key={category.label}>
+            <h3 className="skill-category">{category.label}</h3>
+            {category.data.map((skill) => (
+              <div className="skill-item" key={skill.skillName}>
+                <div className="skill-title">
+                  <span>{skill.skillName}</span>
+                  {isVisible && (
+                    <span
+                      className="skill-percentage"
+                      aria-live="polite"
+                      aria-atomic="true"
+                    >
+                      <CountUp
+                        start={0}
+                        end={skill.percentage}
+                        duration={3}
+                        suffix="%"
+                      />
+                    </span>
+                  )}
+                </div>
+                <div className="skill-bar" role="progressbar" aria-valuenow={skill.percentage} aria-valuemin={0} aria-valuemax={100} aria-label={`${skill.skillName} skill level`}>
+                  <div
+                    className="skill-bar-fill"
+                    style={{ width: isVisible ? `${skill.percentage}%` : 0 }}
+                  ></div>
+                </div>
               </div>
-            </Animate>
-          </div>
+            ))}
+          </article>
         ))}
       </div>
     </section>

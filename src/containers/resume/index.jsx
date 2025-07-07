@@ -11,7 +11,7 @@ const Resume = () => {
           <div className="resume-section-content wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.8s">
             <h2>Contact Information</h2>
             <p className="contact-info">
-              <span className="font-medium">Abinet Zerihun Arega</span><br />
+              <span className="font-medium">Alaye Zerihun Arega</span><br />
               Addis Ababa, Ethiopia<br />
               <a href="mailto:Alaye93@gmail.com">Alaye93@gmail.com</a><br />
               +2519-13-19-04-63<br />

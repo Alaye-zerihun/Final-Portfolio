@@ -1,96 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import './testimonial.css';
-import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import { ClientsInfo } from './clientsInfo';
-import SwiperCore from 'swiper';
-import {
-  FaThumbsUp,
-  FaArrowLeft,
-  FaArrowRight,
-  FaPause,
-  FaPlay,
-} from 'react-icons/fa';
 
-SwiperCore.use([Pagination, Autoplay, Navigation]);
+import React from 'react';
+import { Link } from 'react-scroll';
+import styles from './Testimonial.module.css';
+import testimonialImage1 from '../../images/Adu.jpg'; // Adjust path based on your project structure
+import testimonialImage2 from '../../images/Tewdi.jpg';
+import testimonialImage3 from '../../images/tariku.jpg';
+
+const testimonialsData = [
+  {
+    id: 1,
+    name: 'Adu Smith',
+    role: 'Client, E-Commerce Project',
+    quote: 'Alaye delivered an outstanding e-commerce platform with seamless functionality and a great user experience. Highly professional and reliable!',
+    image: testimonialImage1,
+  },
+  {
+    id: 2,
+    name: 'Betty Johnson',
+    role: 'Colleague, Task Management App',
+    quote: 'Working with Alaye was a pleasure. His expertise in React and Firebase made our project a success. Highly recommended!',
+    image: testimonialImage2,
+  },
+  {
+    id: 3,
+    name: 'Eyasu Tariku',
+    role: 'Client, Portfolio Website',
+    quote: 'Alaye’s attention to detail and creative approach resulted in a stunning portfolio website. He exceeded all expectations!',
+    image: testimonialImage3,
+  },
+];
 
 const Testimonial = () => {
-  const [swiper, setSwiper] = useState(null);
-  const [isAutoPlayEnabled, setIsAutoPlayEnabled] = useState(true);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (swiper && isAutoPlayEnabled) {
-        swiper.slideNext();
-      }
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [swiper, isAutoPlayEnabled]);
-
-  const toggleAutoPlay = () => {
-    setIsAutoPlayEnabled(!isAutoPlayEnabled);
-    if (swiper) {
-      isAutoPlayEnabled ? swiper.autoplay.stop() : swiper.autoplay.start();
-    }
-  };
-
   return (
-    <section className="testimonial container section" id="testimonials">
-      <div className="testimonial-whole">
-        <div className="testimonial__content">
-          <h2 className="section__title">What Others Say About Me</h2>
-          <span className="section__subtitle">Referees Speak</span>
-          <FaThumbsUp className="recommendation-icon" />
+    <section id="testimonials" className={styles.testimonials}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>Testimonials</h2>
+        <p className={styles.subtitle}>What Clients and Colleagues Say</p>
+        <div className={styles.testimonialsGrid}>
+          {testimonialsData.map((testimonial, index) => (
+            <div key={testimonial.id} className={styles.testimonialCard} style={{ '--index': index }}>
+              <img
+                src={testimonial.image}
+                alt={`${testimonial.name} profile`}
+                className={styles.testimonialImage}
+              />
+              <p className={styles.quote}>"{testimonial.quote}"</p>
+              <h3 className={styles.name}>{testimonial.name}</h3>
+              <p className={styles.role}>{testimonial.role}</p>
+            </div>
+          ))}
         </div>
-
-        <div className="swiper-slider">
-          <Swiper
-            loop={true}
-            grabCursor={true}
-            spaceBetween={20}
-            slidesPerView={1}
-            navigation={{
-              nextEl: '.testimonial__next',
-              prevEl: '.testimonial__prev',
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            onSwiper={setSwiper}
-            breakpoints={{
-              576: { slidesPerView: 1, spaceBetween: 10 },
-              768: { slidesPerView: 1, spaceBetween: 10 },
-            }}
-          >
-            {ClientsInfo.map(({ id, image, title, description, email, phone }) => (
-              <SwiperSlide className="testimonial__card" key={id}>
-                <img
-                  src={image}
-                  alt={`${title} profile`}
-                  className="testimonial__img"
-                />
-                <h3 className="testimonial__name">{title}</h3>
-                <p className="testimonial__description">{description}</p>
-                <p className="testimonials-contact">📧 {email}</p>
-                <p className="testimonials-contact">📞 {phone}</p>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        <div className="testimonial__navigation">
-          <FaArrowLeft onClick={() => swiper?.slidePrev()} className="testimonial__prev" />
-          {isAutoPlayEnabled ? (
-            <FaPause onClick={toggleAutoPlay} className="testimonial__pause" />
-          ) : (
-            <FaPlay onClick={toggleAutoPlay} className="testimonial__play" />
-          )}
-          <FaArrowRight onClick={() => swiper?.slideNext()} className="testimonial__next" />
-        </div>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={800}
+          offset={-80}
+          className={styles.ctaButton}
+          aria-label="Go to contact section"
+        >
+          Get in Touch
+        </Link>
       </div>
     </section>
   );

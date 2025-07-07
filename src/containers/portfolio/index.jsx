@@ -1,123 +1,95 @@
-import React, { useState } from "react";
-import PageHeaderContent from "../../components/pageHeaderContent";
-import { BsInfoCircleFill } from "react-icons/bs";
-import ImageOne from "../../images/Netflix.png";
-import ImageTwo from "../../images/amazon.jpg";
-import ImageThree from "../../images/Evangadi-forum.png";
-import "./styles.css";
 
-const portfolioData = [
+import React from 'react';
+import { Link } from 'react-scroll';
+import styles from './Portfolio.module.css';
+import projectImage1 from '../../images/evangadiforum.jpeg';
+import projectImage2 from '../../images/amazon.jpeg';
+import projectImage3 from '../../images/netflix.jpeg';
+
+const projectsData = [
   {
     id: 1,
-    name: "Netflix",
-    image: ImageOne,
-    link: "https://github.com/Alaye-zerihun/Netflix-by-alex",
-    category: "Video Demo",
+    title: 'E-Commerce Platform',
+    description: 'A full-featured e-commerce website with user authentication, product filtering, and payment integration.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    liveLink: 'https://example.com/ecommerce',
+    repoLink: 'https://github.com/Alaye-zerihun/ecommerce',
+    image: projectImage1,
   },
   {
     id: 2,
-    name: "Amazon",
-    image: ImageTwo,
-    link: "https://vocal-entremet-84378a.netlify.app/",
-    category: "Deployed",
+    title: 'Task Management App',
+    description: 'A collaborative task management tool with real-time updates and user-friendly interface.',
+    technologies: ['React', 'Firebase', 'TypeScript'],
+    liveLink: 'https://example.com/task-manager',
+    repoLink: 'https://github.com/Alaye-zerihun/task-manager',
+    image: projectImage2,
   },
   {
     id: 3,
-    name: "Evangadi Forum",
-    image: ImageThree,
-    link: "https://evangadiforum-frontend-final.vercel.app/",
-    category: "Deployed",
+    title: 'Portfolio Website',
+    description: 'A personal portfolio showcasing my skills and projects with smooth animations and responsive design.',
+    technologies: ['React', 'Vite', 'react-scroll'],
+    liveLink: 'https://example.com/portfolio',
+    repoLink: 'https://github.com/Alaye-zerihun/Final-Portfolio',
+    image: projectImage3,
   },
 ];
 
-const filterData = [
-  { filterId: 1, label: "All" },
-  { filterId: 2, label: "Deployed" },
-  { filterId: 3, label: "Video Demo" },
-];
-
 const Portfolio = () => {
-  const [filteredValue, setFilteredValue] = useState(1);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  const handleFilter = (id) => setFilteredValue(id);
-
-  const filteredItems =
-    filteredValue === 1
-      ? portfolioData
-      : portfolioData.filter(
-          (item) =>
-            (filteredValue === 2 && item.category === "Deployed") ||
-            (filteredValue === 3 && item.category === "Video Demo")
-        );
-
   return (
-    <section id="portfolio" className="portfolio" aria-label="Portfolio Section">
-      <PageHeaderContent
-        headerText="My Portfolio"
-        icon={<BsInfoCircleFill size={40} />}
-      />
-
-      <ul className="portfolio__filters" role="list" aria-label="Portfolio Filters">
-        {filterData.map((filter) => (
-          <li
-            key={filter.filterId}
-            className={filter.filterId === filteredValue ? "active" : ""}
-            onClick={() => handleFilter(filter.filterId)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                handleFilter(filter.filterId);
-              }
-            }}
-            tabIndex={0}
-            role="button"
-            aria-pressed={filter.filterId === filteredValue}
-            aria-label={`Filter portfolio by ${filter.label}`}
-          >
-            {filter.label}
-          </li>
-        ))}
-      </ul>
-
-      <div className="portfolio__cards">
-        {filteredItems.map((item, index) => (
-          <figure
-            key={item.id}
-            className="portfolio__card"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolio__image-link"
-              aria-describedby={`desc-${item.id}`}
-            >
+    <section id="portfolio" className={styles.portfolio}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>My Portfolio</h2>
+        <p className={styles.subtitle}>Projects That Showcase My Expertise</p>
+        <div className={styles.projectsGrid}>
+          {projectsData.map((project, index) => (
+            <div key={project.id} className={styles.projectCard} style={{ '--index': index }}>
               <img
-                src={item.image}
-                alt={`Screenshot of project: ${item.name}`}
-                loading="lazy"
+                src={project.image}
+                alt={`${project.title} screenshot`}
+                className={styles.projectImage}
               />
-            </a>
-
-            <figcaption
-              id={`desc-${item.id}`}
-              className={`portfolio__overlay ${
-                hoveredIndex === index ? "visible" : ""
-              }`}
-            >
-              <p>{item.name}</p>
-              <button
-                onClick={() => window.open(item.link, "_blank")}
-                type="button"
-                aria-label={`Visit ${item.name} website`}
-              >
-                Visit
-              </button>
-            </figcaption>
-          </figure>
-        ))}
+              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <p className={styles.projectDescription}>{project.description}</p>
+              <div className={styles.technologies}>
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className={styles.techTag}>{tech}</span>
+                ))}
+              </div>
+              <div className={styles.links}>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.linkButton}
+                  aria-label={`View live demo of ${project.title}`}
+                >
+                  Live Demo
+                </a>
+                <a
+                  href={project.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.linkButton}
+                  aria-label={`View source code of ${project.title}`}
+                >
+                  Source Code
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={800}
+          offset={-80}
+          className={styles.ctaButton}
+          aria-label="Go to contact section"
+        >
+          Get in Touch
+        </Link>
       </div>
     </section>
   );

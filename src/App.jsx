@@ -57,36 +57,12 @@ function App() {
   return (
     <div>
       <Navbar />
-
-      <div ref={sections.home} id="home" className="section home">
-        <Home />
-      </div>
-
-      <div ref={sections.about} id="about" className="section about animate-on-scroll">
-        <About />
-      </div>
-
-    <div ref={sections.resume} id="resume" className="section resume animate-on-scroll">
-  <Resume />
-</div>
-
-
-      <div ref={sections.skills} id="skills" className="section skills animate-on-scroll">
-        <Skills />
-      </div>
-
-
-      <div ref={sections.testimonials} id="testimonials" className="section testimonials animate-on-scroll">
-        <Testimonials />
-      </div>
-
-      <div ref={sections.portfolio} id="portfolio" className="section portfolio animate-on-scroll">
-        <Portfolio />
-      </div>
-
-      <div ref={sections.contact} id="contact" className="section contact animate-on-scroll">
+      <Home />
+      <About />
+      <Skills />
+      <Portfolio />
+      <Testimonials />
         <Contact />
-      </div>
 
       <ScrollUp />
       <Footer />

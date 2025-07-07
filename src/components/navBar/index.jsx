@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-import homeIcon from "../../images/myimage.png";
+import homeIcon from "../../images/Evangadi_cover.jpeg";
 import "./styles.css";
 
 const navLinks = [
   { label: "Home", to: "home" },
   { label: "About", to: "about" },
-  { label: "Resume", to: "resume" },
+
   { label: "Skills", to: "skills" },
   { label: "Portfolio", to: "portfolio" },
   { label: "Recommendations", to: "testimonials" },
@@ -17,7 +17,7 @@ const navLinks = [
 const navbarStyles = {
   home: { background: "linear-gradient(90deg, #1a1a1a, #2c3e50)", color: "#fff" },
   about: { background: "linear-gradient(90deg, #e0e0e0, #ecf0f1)", color: "#2c3e50" },
-  resume: { background: "linear-gradient(90deg, #2c3e50, #3498db)", color: "#fff" },
+
   skills: { background: "linear-gradient(90deg, #1a1a1a, #34495e)", color: "#fff" },
   services: { background: "linear-gradient(90deg, #ecf0f1, #fff)", color: "#2c3e50" },
   portfolio: { background: "linear-gradient(90deg, #2c3e50, #e67e22)", color: "#fff" },

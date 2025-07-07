@@ -1,11 +1,12 @@
-import React, { useRef, useState } from "react";
-import PageHeaderContent from "../../components/pageHeaderContent";
-import { BsInfoCircleFill } from "react-icons/bs";
-import { Animate } from "react-simple-animate";
-import emailjs from "@emailjs/browser";
-import { FaHandshake, FaUsers } from "react-icons/fa";
-// import cvPDF from "../../containers/home/CV/My-Profile.pdf";
-import "./styles.css";
+
+import React, { useRef, useState } from 'react';
+import { Link } from 'react-scroll';
+import { Animate } from 'react-simple-animate';
+import emailjs from '@emailjs/browser';
+import { BsInfoCircleFill } from 'react-icons/bs';
+import { FaHandshake, FaUsers } from 'react-icons/fa';
+import styles from './Contact.module.css';
+import PageHeaderContent from '../../components/pageHeaderContent';
 
 const Contact = () => {
   const form = useRef();
@@ -19,140 +20,126 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_zj0qnff", "template_cyqz1lk", form.current, "kF2-MOWEg0fKTFuJH")
+      .sendForm('service_zj0qnff', 'template_cyqz1lk', form.current, 'kF2-MOWEg0fKTFuJH')
       .then(() => {
-        setStatusType("success");
-        setStatusMessage("Thank you! Your message has been successfully delivered.");
+        setStatusType('success');
+        setStatusMessage('Thank you! Your message has been successfully delivered.');
         e.target.reset();
         setFocused({ name: false, email: false, message: false });
         setTimeout(() => setStatusMessage(null), 5000);
       })
       .catch(() => {
-        setStatusType("error");
-        setStatusMessage("Apologies, your message could not be sent. Please try again later.");
+        setStatusType('error');
+        setStatusMessage('Apologies, your message could not be sent. Please try again later.');
         setTimeout(() => setStatusMessage(null), 5000);
       });
   };
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = cvPDF;
-    link.setAttribute("download", "My-Profile.pdf");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
-    <section id="contact" className="contact" aria-label="Contact Section">
+    <section id="contact" className={styles.contact} aria-label="Contact Section">
       <PageHeaderContent headerText="Get in Touch" icon={<BsInfoCircleFill size={40} />} />
-
-      <div className="contact__wrapper">
+      <div className={styles.wrapper}>
         <Animate
           play
           duration={1}
           delay={0}
-          start={{ transform: "translateX(-200px)" }}
-          end={{ transform: "translateX(0px)" }}
+          start={{ transform: 'translateX(-200px)', opacity: 0 }}
+          end={{ transform: 'translateX(0px)', opacity: 1 }}
         >
-          <div className="contact__wrapper__form-container">
-            <h3 className="contact__wrapper__form-container__header-text">Let's Collaborate</h3>
-
-            <form ref={form} onSubmit={sendEmail} className="contact-form" noValidate>
-              <div className="form-group">
+          <div className={styles.formContainer}>
+            <h3 className={styles.formHeader}>Let's Collaborate</h3>
+            <form ref={form} onSubmit={sendEmail} className={styles.form} noValidate>
+              <div className={styles.formGroup}>
                 <input
                   type="text"
                   name="user_name"
                   required
-                  className="form-input"
-                  onFocus={() => handleFocus("name")}
-                  onBlur={() => handleBlur("name")}
+                  className={styles.formInput}
+                  onFocus={() => handleFocus('name')}
+                  onBlur={() => handleBlur('name')}
                   placeholder=" "
                   aria-label="Full Name"
                 />
-                <label className={`form-label ${focused.name ? "focused" : ""}`}>Name</label>
+                <label className={`${styles.formLabel} ${focused.name ? styles.focused : ''}`}>
+                  Name
+                </label>
               </div>
-
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <input
                   type="email"
                   name="user_email"
                   required
-                  className="form-input"
-                  onFocus={() => handleFocus("email")}
-                  onBlur={() => handleBlur("email")}
+                  className={styles.formInput}
+                  onFocus={() => handleFocus('email')}
+                  onBlur={() => handleBlur('email')}
                   placeholder=" "
                   aria-label="Email Address"
                 />
-                <label className={`form-label ${focused.email ? "focused" : ""}`}>Email</label>
+                <label className={`${styles.formLabel} ${focused.email ? styles.focused : ''}`}>
+                  Email
+                </label>
               </div>
-
-              <div className="form-group">
+              <div className={styles.formGroup}>
                 <textarea
                   name="message"
                   rows="5"
                   required
-                  className="form-textarea"
-                  onFocus={() => handleFocus("message")}
-                  onBlur={() => handleBlur("message")}
+                  className={styles.formTextarea}
+                  onFocus={() => handleFocus('message')}
+                  onBlur={() => handleBlur('message')}
                   placeholder=" "
                   aria-label="Message"
                 />
-                <label className={`form-label ${focused.message ? "focused" : ""}`}>Message</label>
+                <label className={`${styles.formLabel} ${focused.message ? styles.focused : ''}`}>
+                  Message
+                </label>
               </div>
-
-              <button type="submit" className="form-button" aria-live="polite">
+              <button type="submit" className={styles.formButton} aria-live="polite">
                 Send Message
               </button>
-
-              <div
-                style={{
-                  marginTop: "1.5rem",
-                  display: "flex",
-                  gap: "1rem",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={handleDownload}
-                  className="form-button alt-button"
-                  aria-label="Download Resume"
-                >
-                  Download CV
-                </button>
+              <div className={styles.buttonGroup}>
                 <a
                   href="mailto:abinetzerihun0@gmail.com"
-                  className="form-button alt-button"
+                  className={`${styles.formButton} ${styles.altButton}`}
                   aria-label="Contact via Email"
                 >
                   Hire Me
                 </a>
               </div>
-
               {statusMessage && (
-                <div className={`form-status-message ${statusType}`}>{statusMessage}</div>
+                <div className={`${styles.formStatusMessage} ${styles[statusType]}`}>
+                  {statusMessage}
+                </div>
               )}
             </form>
           </div>
         </Animate>
-
-        <div className="contact__text-container" aria-live="polite">
-          <div className="contact__text">
-            <div className="intro-line">
-              <FaHandshake className="cooperation-icon" aria-hidden="true" />
-              <h1 tabIndex={-1}>Hello!</h1>
+        <Animate
+          play
+          duration={1}
+          delay={0.2}
+          start={{ transform: 'translateX(200px)', opacity: 0 }}
+          end={{ transform: 'translateX(0px)', opacity: 1 }}
+        >
+          <div className={styles.textContainer}>
+            <div className={styles.text}>
+              <div className={styles.introLine}>
+                <FaHandshake className={styles.cooperationIcon} aria-hidden="true" />
+                <h1 tabIndex={-1}>Hello!</h1>
+              </div>
+              <p>
+                As a passionate developer, I’m eager to collaborate with forward-thinking teams to
+                solve real-world challenges through innovative software solutions. I value clear
+                communication, continuous improvement, and impactful design.
+              </p>
+              <p>
+                <FaUsers className={styles.cooperationIcon} aria-hidden="true" />
+                Let’s create outstanding digital experiences together. I’m just a message
+                away—feel free to connect anytime!
+              </p>
             </div>
-            <p>
-              As a passionate developer, I’m eager to collaborate with forward-thinking teams to solve real-world challenges through innovative software solutions. I value clear communication, continuous improvement, and impactful design.
-            </p>
-            <p>
-              <FaUsers className="cooperation-icon" aria-hidden="true" />
-              Let’s create outstanding digital experiences together. I’m just a message away—feel free to connect anytime!
-            </p>
           </div>
-        </div>
+        </Animate>
       </div>
     </section>
   );

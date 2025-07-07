@@ -1,53 +1,61 @@
-import React from "react";
-import { BsInfoCircleFill } from "react-icons/bs";
-import PageHeaderContent from "../../components/pageHeaderContent";
-import { Animate } from "react-simple-animate";
-import { FaRocket } from "react-icons/fa";
-import myImage from "../../images/Alex2.JPG";
-import "./styles.css";
 
-const jobSummary = `
-With a Master’s degree in Computer Science from Addis Ababa University, I have cultivated a strong academic foundation in algorithms, software engineering, and system design. My professional journey is marked by a passion for innovative problem-solving and a commitment to delivering impactful solutions.
+import React from 'react';
+import { Link } from 'react-scroll';
+import styles from './About.module.css';
+import profileImage from '../../images/Alex2.jpg'; // Adjust path based on your project structure
 
-My approach is fueled by innovation and a desire to solve complex challenges. I live by the principle: “The best way to predict the future is to create it,” driving me to continuously learn and adapt in the ever-evolving tech landscape.
-`;
-
-const About = () => (
-  <section id="about" className="about">
-    <PageHeaderContent headerText="About Me" icon={<BsInfoCircleFill size={40} />} />
-    <div className="about__content">
-      <Animate
-        play
-        duration={1.8}
-        delay={0.3}
-        start={{ transform: "translateX(-200px)", opacity: 0 }}
-        end={{ transform: "translateX(0)", opacity: 1 }}
-      >
-        <div className="about__image-wrapper">
-          <img src={myImage} alt="Alaye Zerihun" className="about__image" />
-          <div className="about__image-overlay"></div>
+const About = () => {
+  return (
+    <section id="about" className={styles.about}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>About Me</h2>
+        <p className={styles.subtitle}>Passionate Full Stack Developer</p>
+        <div className={styles.content}>
+          <div className={styles.imageWrapper}>
+            <img
+              src={profileImage}
+              alt="Alaye Zerihun profile"
+              className={styles.profileImage}
+            />
+          </div>
+          <div className={styles.textWrapper}>
+            <p className={styles.description}>
+              I'm Alaye Zerihun, a dedicated Full Stack Developer with a passion for
+              building innovative and user-friendly web applications. With expertise in
+              both frontend and backend technologies, I specialize in creating scalable
+              solutions that drive impact. My journey at Evangadi Networks honed my
+              skills in React, Node.js, and modern web development practices.
+            </p>
+            <p className={styles.description}>
+              I thrive on solving complex problems and collaborating with teams to
+              deliver high-quality projects. When I'm not coding, you can find me
+              exploring new technologies or contributing to open-source communities.
+            </p>
+            <div className={styles.buttonGroup}>
+              <a
+                href="/resume.pdf"
+                download
+                className={styles.resumeButton}
+                aria-label="Download my resume"
+              >
+                Download Resume
+              </a>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={800}
+                offset={-80}
+                className={styles.contactButton}
+                aria-label="Go to contact section"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </div>
         </div>
-      </Animate>
-      <Animate
-        play
-        duration={1.8}
-        delay={0.7}
-        start={{ transform: "translateX(200px)", opacity: 0 }}
-        end={{ transform: "translateX(0)", opacity: 1 }}
-      >
-        <div className="about__text-wrapper">
-          <h2 className="about__heading">
-            Embarking on the Journey of <span>Development Mastery</span>
-            <FaRocket className="about__icon" />
-          </h2>
-          <p className="about__summary">{jobSummary.trim()}</p>
-          <a href="#contact" className="about__cta">
-            Let’s Create the Future Together!
-          </a>
-        </div>
-      </Animate>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 export default About;

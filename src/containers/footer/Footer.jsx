@@ -120,12 +120,7 @@ export default function Footer() {
   return (
     <FooterStyle>
       <div className="container">
-        <div className="footer__col1">
-          <h1 className="footer__col1__title">Alaye Zerihun</h1>
-          <PText>
-            As a dedicated full stack developer specializing in React, Next.js, Node.js, and Express, I am passionate about crafting innovative, high-quality solutions. With an insatiable curiosity for mastering cutting-edge technologies, I strive to push the boundaries of modern development.
-          </PText>
-        </div>
+    
         <div className="footer__col2">
           <FooterCol
             heading="Important Links"

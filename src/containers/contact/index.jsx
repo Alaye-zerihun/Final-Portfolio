@@ -4,7 +4,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { Animate } from "react-simple-animate";
 import emailjs from "@emailjs/browser";
 import { FaHandshake, FaUsers } from "react-icons/fa";
-import cvPDF from "../../containers/home/CV/My-Profile.pdf";
+// import cvPDF from "../../containers/home/CV/My-Profile.pdf";
 import "./styles.css";
 
 const Contact = () => {

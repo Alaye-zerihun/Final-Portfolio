@@ -1,13 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/meanandmern.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta name="description" content="Portfolio of Abinet, a skilled Network Administrator with expertise in ICT consulting, system maintenance, and technical training." />
+    <meta name="keywords" content="Network Administrator, ICT Consulting, Information Systems, Addis Ababa University, Portfolio, Resume" />
+    <meta name="author" content="Abinet" />
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Abinet's Portfolio" />
+    <meta property="og:description" content="Explore the professional journey of Abinet, a Network Administrator with a BSc in Information Systems and 8 years of experience in ICT and teaching." />
+    <meta property="og:image" content="/images/preview.jpg" />
+    <meta property="og:url" content="https://your-portfolio-url.com" />
+    <meta property="og:type" content="website" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Google Fonts: Inter -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <!-- Animate.css for WOW.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Alaye's Professional Portfolio</title>
+    <style>
+      /* Preloader Styles */
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #3182ce, #e6f0fa);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      .preloader.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .preloader-spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid #ffffff;
+        border-top: 6px solid #1a202c;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      body {
+        margin: 0;
+        font-family: 'Inter', Arial, sans-serif;
+      }
+    </style>
   </head>
   <body>
+    <!-- Preloader -->
+    <div className="preloader" id="preloader">
+      <div className="preloader-spinner"></div>
+    </div>
+    <!-- React Root -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Hide preloader after page load
+      window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+          preloader.classList.add('hidden');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 500);
+        }, 1000);
+      });
+    </script>
   </body>
 </html>

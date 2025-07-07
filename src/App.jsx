@@ -2,14 +2,14 @@ import React, { useRef, useEffect } from "react";
 import Navbar from "./components/navBar/";
 import Home from "./containers/home/";
 import About from "./containers/about";
-// import Resume from "./containers/resume";
+import Resume from "./containers/resume/index.jsx";
 import Skills from "./containers/skills";
 import Portfolio from "./containers/portfolio";
 import Contact from "./containers/contact";
 import Footer from "./containers/footer/Footer";
 import smoothscroll from "smoothscroll-polyfill";
 import Testimonials from "./containers/testimonials/testimonial.jsx";
-import Services from "./containers/services/services.jsx";
+
 import ScrollUp from "./containers/scrollUp/ScrollUp.jsx";
 
 // Add smooth scroll polyfill
@@ -66,17 +66,15 @@ function App() {
         <About />
       </div>
 
-      {/* <div ref={sections.resume} id="resume" className="section resume animate-on-scroll">
-        <Resume />
-      </div> */}
+    <div ref={sections.resume} id="resume" className="section resume animate-on-scroll">
+  <Resume />
+</div>
+
 
       <div ref={sections.skills} id="skills" className="section skills animate-on-scroll">
         <Skills />
       </div>
 
-      <div ref={sections.services} id="services" className="section services animate-on-scroll">
-        <Services />
-      </div>
 
       <div ref={sections.testimonials} id="testimonials" className="section testimonials animate-on-scroll">
         <Testimonials />

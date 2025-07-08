@@ -30,7 +30,7 @@ const Footer = () => {
         </ul>
         <div className={styles.copyright}>
           <p>
-            © {new Date().getFullYear()} Abinet Zerihun. All rights reserved.
+            © {new Date().getFullYear()} Alaye Zerihun. All rights reserved.
           </p>
         </div>
       </div>

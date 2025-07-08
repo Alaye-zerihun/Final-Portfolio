@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-scroll';
 import styles from './Portfolio.module.css';
@@ -9,33 +8,32 @@ import projectImage3 from '../../images/netflix.jpeg';
 const projectsData = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce website with user authentication, product filtering, and payment integration.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    liveLink: 'https://example.com/ecommerce',
-    repoLink: 'https://github.com/Alaye-zerihun/ecommerce',
+    title: 'Evangadi Forum',
+    description: 'A community forum website with user authentication, post creation, and responsive design.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'], // Adjust technologies if needed
+    liveLink: 'https://evangadiforum-frontend-final.vercel.app/',
+    repoLink: 'https://github.com/Alaye-zerihun/Evangadiforum-Frontend-final.git',
     image: projectImage1,
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management tool with real-time updates and user-friendly interface.',
-    technologies: ['React', 'Firebase', 'TypeScript'],
-    liveLink: 'https://example.com/task-manager',
-    repoLink: 'https://github.com/Alaye-zerihun/task-manager',
+    title: 'Amazon Clone',
+    description: 'A clone of the Amazon website with product listings, responsive design, and user-friendly interface.',
+    technologies: ['React', 'Firebase', 'TypeScript'], // Adjust technologies if needed
+    liveLink: 'https://vocal-entremet-84378a.netlify.app/', // Update if new URL after redeployment
+    repoLink: 'https://github.com/Alaye-zerihun/Amazon-Website.git',
     image: projectImage2,
   },
   {
     id: 3,
-    title: 'Portfolio Website',
-    description: 'A personal portfolio showcasing my skills and projects with smooth animations and responsive design.',
-    technologies: ['React', 'Vite', 'react-scroll'],
-    liveLink: 'https://example.com/portfolio',
-    repoLink: 'https://github.com/Alaye-zerihun/Final-Portfolio',
+    title: 'Netflix Clone',
+    description: 'A clone of the Netflix website featuring video streaming UI and responsive design.',
+    technologies: ['React', 'Vite', 'react-scroll'], // Adjust technologies if needed
+    liveLink: 'https://your-netflix-clone-url.netlify.app/', // Replace with actual URL
+    repoLink: 'https://github.com/Alaye-zerihun/Netflix-by-alex.git',
     image: projectImage3,
   },
 ];
-
 const Portfolio = () => {
   return (
     <section id="portfolio" className={styles.portfolio}>

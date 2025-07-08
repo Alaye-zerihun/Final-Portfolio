@@ -1,13 +1,12 @@
-
 .contact {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+  background: linear-gradient(135deg, #1a1a1a 100%, #2c3e50 100%); /* Preserved background */
   padding: 80px 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Inter', 'Arial', sans-serif;
-  color: #fff;
+  color: #fff; /* Base text color set to white */
   scroll-margin-top: 80px;
   position: relative;
   overflow: hidden;
@@ -34,7 +33,7 @@
 .formHeader {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #fff;
+  color: #fff; /* Pure white text */
   margin-bottom: 1.5rem;
   text-align: center;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -57,7 +56,7 @@
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
-  color: #fff;
+  color: #fff; /* Pure white text */
   font-size: 1rem;
   font-family: 'Inter', 'Arial', sans-serif;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -79,7 +78,7 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  color: #e5e7eb;
+  color: #fff; /* Pure white text */
   font-size: 1rem;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -89,14 +88,14 @@
   top: -0.5rem;
   left: 0.5rem;
   font-size: 0.85rem;
-  color: var(--accent-color);
+  color: var(--accent-color); /* Keep accent color for contrast */
   background: rgba(255, 255, 255, 0.1);
   padding: 0 0.25rem;
 }
 
 .formButton {
   background: var(--accent-color);
-  color: #fff;
+  color: #fff; /* Pure white text */
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 50px;
@@ -121,12 +120,12 @@
 .altButton {
   background: transparent;
   border: 2px solid var(--accent-color);
-  color: var(--accent-color);
+  color: var(--accent-color); /* Keep accent color for contrast */
 }
 
 .altButton:hover {
   background: var(--accent-color);
-  color: #fff;
+  color: #fff; /* Pure white text on hover */
 }
 
 .buttonGroup {
@@ -147,12 +146,12 @@
 
 .formStatusMessage.success {
   background: rgba(46, 204, 113, 0.2);
-  color: #2ecc71;
+  color: #fff; /* Pure white text */
 }
 
 .formStatusMessage.error {
   background: rgba(231, 76, 60, 0.2);
-  color: #e74c3c;
+  color: #fff; /* Pure white text */
 }
 
 .textContainer {
@@ -175,28 +174,36 @@
 }
 
 .cooperationIcon {
-  color: var(--accent-color);
+  color: var(--accent-color); /* Keep accent color for contrast */
   font-size: 1.5rem;
 }
 
 .text h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: #fff;
+  color: #fff; /* Pure white text */
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .text p {
   font-size: 1.1rem;
-  line-height: 1.6;
-  color: #e5e7eb;
+  line-height: 1.8;
+  color: #fff; /* Pure white text */
+  text-align: justify; /* Justified text for perfect paragraph alignment */
   margin-bottom: 1rem;
+  hyphens: auto; /* Enable hyphenation for smoother justification */
+}
+
+/* Ensure multiple paragraphs have consistent spacing */
+.text p + p {
+  margin-top: 1rem; /* Space between consecutive paragraphs */
 }
 
 .text p:last-child {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 0;
 }
 
 @keyframes fadeInUp {
@@ -252,6 +259,7 @@
 
   .text p {
     font-size: 1rem;
+    text-align: justify; /* Maintain justified text on mobile */
   }
 }
 

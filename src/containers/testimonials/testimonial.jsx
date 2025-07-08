@@ -9,22 +9,22 @@ import testimonialImage3 from '../../images/tariku.jpg';
 const testimonialsData = [
   {
     id: 1,
-    name: 'Adu Smith',
-    role: 'Client, E-Commerce Project',
+    name: 'Adugna Bekele',
+    role: 'CEO  for Evangadi Networks',
     quote: 'Alaye delivered an outstanding e-commerce platform with seamless functionality and a great user experience. Highly professional and reliable!',
     image: testimonialImage1,
   },
   {
     id: 2,
-    name: 'Betty Johnson',
-    role: 'Colleague, Task Management App',
+    name: 'Tewedaji Shola',
+    role: ' Fullstack Developer & Evangadi Admin',
     quote: 'Working with Alaye was a pleasure. His expertise in React and Firebase made our project a success. Highly recommended!',
     image: testimonialImage2,
   },
   {
     id: 3,
-    name: 'Eyasu Tariku',
-    role: 'Client, Portfolio Website',
+    name: 'Tariku Abera',
+    role: 'Fullstack Developer and Teacher',
     quote: 'Alaye’s attention to detail and creative approach resulted in a stunning portfolio website. He exceeded all expectations!',
     image: testimonialImage3,
   },

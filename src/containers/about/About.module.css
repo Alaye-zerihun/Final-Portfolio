@@ -1,13 +1,12 @@
-
 .about {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+   background: linear-gradient(135deg, #1a1a1a 100%, #2c3e50 100%); /* Preserved background */
   padding: 80px 20px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Inter', 'Arial', sans-serif;
-  color:white;
+  color: #fff; /* Base text color set to white */
   scroll-margin-top: 80px;
   position: relative;
   overflow: hidden;
@@ -25,7 +24,7 @@
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: #fff; /* Pure white text */
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   animation: slideIn 1.2s ease-out;
 }
@@ -33,7 +32,7 @@
 .subtitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #4b5563;
+  color: #fff; /* Pure white text */
   margin-bottom: 2rem;
   animation: fadeIn 1.4s ease-out;
 }
@@ -44,6 +43,7 @@
   gap: 2rem;
   align-items: center;
   justify-content: center;
+  color: #fff; /* Pure white text */
 }
 
 .imageWrapper {
@@ -76,8 +76,16 @@
 .description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #374151;
+  color: #fff; /* Pure white text */
+  text-align: justify; /* Justified text for perfect paragraph alignment */
   margin-bottom: 1.5rem;
+  hyphens: auto; /* Enable hyphenation for smoother justification */
+}
+
+/* Ensure multiple paragraphs have consistent spacing */
+.description p {
+  margin: 0 0 1rem 0; /* Space between paragraphs */
+  padding: 0;
 }
 
 .buttonGroup {
@@ -99,7 +107,7 @@
 
 .resumeButton {
   background: var(--accent-color);
-  color: #fff;
+  color: #fff; /* Pure white text */
   box-shadow: 0 4px 16px rgba(231, 76, 60, 0.4);
 }
 
@@ -111,14 +119,14 @@
 
 .contactButton {
   background: transparent;
-  color: var(--accent-color);
+  color: var(--accent-color); /* Keep accent color for contrast */
   border: 2px solid var(--accent-color);
 }
 
 .contactButton:hover {
   transform: translateY(-4px);
   background: var(--accent-color);
-  color: #fff;
+  color: #fff; /* Pure white text on hover */
   box-shadow: 0 8px 24px rgba(231, 76, 60, 0.4);
 }
 
@@ -175,6 +183,11 @@
     text-align: center;
   }
 
+  .description {
+    text-align: justify; /* Maintain justified text on mobile */
+    font-size: 0.95rem;
+  }
+
   .buttonGroup {
     flex-direction: column;
     gap: 1rem;
@@ -202,6 +215,10 @@
 
   .profileImage {
     max-width: 320px;
+  }
+
+  .description {
+    font-size: 1.2rem;
   }
 }
 

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-scroll';
+
 import styles from './Skills.module.css';
 
 const skillsData = [

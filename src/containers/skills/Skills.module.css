@@ -1,6 +1,9 @@
+:root {
+  --accent-color: #e74c3c;
+}
 
 .skills {
-  background: linear-gradient(135deg, #1a1a1a 100%, #2c3e50 100%);
+  background: linear-gradient(135deg, #000 100%, #000 100%);
   padding: 80px 20px;
   min-height: 100vh;
   display: flex;
@@ -33,7 +36,7 @@
 .subtitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fef3c7;
+  color: #fff;
   margin-bottom: 2rem;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   animation: fadeIn 1.4s ease-out;
@@ -94,6 +97,7 @@
   outline-offset: 3px;
 }
 
+/* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -109,6 +113,7 @@
   to { opacity: 1; }
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .skills {
     padding: 60px 16px;
@@ -175,8 +180,4 @@
     animation: none !important;
     transition: none !important;
   }
-}
-
-:root {
-  --accent-color: #e74c3c;
 }

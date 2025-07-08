@@ -1,12 +1,16 @@
+:root {
+  --accent-color: #e74c3c;
+}
+
 .about {
-   background:(#1a1a1a); /* Preserved background */
+  background: #000; /* Perfect black background */
   padding: 80px 20px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Inter', 'Arial', sans-serif;
-  color: #fff; /* Base text color set to white */
+  color: #fff;
   scroll-margin-top: 80px;
   position: relative;
   overflow: hidden;
@@ -18,13 +22,14 @@
   padding: 0 1.5rem;
   text-align: center;
   animation: fadeInUp 1s ease-out;
+  color: #fff;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  color: #fff; /* Pure white text */
+  color: #fff;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   animation: slideIn 1.2s ease-out;
 }
@@ -32,7 +37,7 @@
 .subtitle {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #fff; /* Pure white text */
+  color: #fff;
   margin-bottom: 2rem;
   animation: fadeIn 1.4s ease-out;
 }
@@ -43,7 +48,7 @@
   gap: 2rem;
   align-items: center;
   justify-content: center;
-  color: #fff; /* Pure white text */
+  color: #fff;
 }
 
 .imageWrapper {
@@ -64,28 +69,29 @@
 
 .profileImage:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 32prgba(231, 76, 60, 0.4);
+  box-shadow: 0 12px 32px rgba(231, 76, 60, 0.4);
 }
 
 .textWrapper {
   flex: 2;
   text-align: left;
   max-width: 600px;
+  color: #fff;
 }
 
 .description {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #fff; /* Pure white text */
-  text-align: justify; /* Justified text for perfect paragraph alignment */
+  color: #fff;
+  text-align: justify;
   margin-bottom: 1.5rem;
-  hyphens: auto; /* Enable hyphenation for smoother justification */
+  hyphens: auto;
 }
 
-/* Ensure multiple paragraphs have consistent spacing */
 .description p {
-  margin: 0 0 1rem 0; /* Space between paragraphs */
+  margin: 0 0 1rem 0;
   padding: 0;
+  color: #fff;
 }
 
 .buttonGroup {
@@ -107,7 +113,7 @@
 
 .resumeButton {
   background: var(--accent-color);
-  color: #fff; /* Pure white text */
+  color: #fff;
   box-shadow: 0 4px 16px rgba(231, 76, 60, 0.4);
 }
 
@@ -119,14 +125,14 @@
 
 .contactButton {
   background: transparent;
-  color: var(--accent-color); /* Keep accent color for contrast */
+  color: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
 
 .contactButton:hover {
   transform: translateY(-4px);
   background: var(--accent-color);
-  color: #fff; /* Pure white text on hover */
+  color: #fff;
   box-shadow: 0 8px 24px rgba(231, 76, 60, 0.4);
 }
 
@@ -151,6 +157,7 @@
   to { opacity: 1; }
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
   .about {
     padding: 60px 16px;
@@ -184,7 +191,7 @@
   }
 
   .description {
-    text-align: justify; /* Maintain justified text on mobile */
+    text-align: justify;
     font-size: 0.95rem;
   }
 
@@ -234,8 +241,4 @@
     animation: none !important;
     transition: none !important;
   }
-}
-
-:root {
-  --accent-color: #e74c3c;
 }

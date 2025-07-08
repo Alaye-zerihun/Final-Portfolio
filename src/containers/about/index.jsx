@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import styles from './About.module.css';
-import profileImage from '../../images/Alex2.jpg'; // Adjust path based on your project structure
+import profileImage from '../../images/Alex2.JPG'; // Adjust path based on your project structure
 
 const About = () => {
   return (

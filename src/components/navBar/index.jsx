@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import homeIcon from "../../images/evangadi_cover.jpeg";
-import "./Navbar.module.css";
+import "./styles.css";
 
 const navLinks = [
   { label: "Home", to: "home" },

@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-scroll';
 import { Animate } from 'react-simple-animate';
@@ -23,21 +22,21 @@ const Contact = () => {
       .sendForm('service_zj0qnff', 'template_cyqz1lk', form.current, 'kF2-MOWEg0fKTFuJH')
       .then(() => {
         setStatusType('success');
-        setStatusMessage('Thank you! Your message has been successfully delivered.');
+        setStatusMessage('✅ Success! Your message has been delivered.');
         e.target.reset();
         setFocused({ name: false, email: false, message: false });
         setTimeout(() => setStatusMessage(null), 5000);
       })
       .catch(() => {
         setStatusType('error');
-        setStatusMessage('Apologies, your message could not be sent. Please try again later.');
+        setStatusMessage('❌ Error! Please try again later.');
         setTimeout(() => setStatusMessage(null), 5000);
       });
   };
 
   return (
     <section id="contact" className={styles.contact} aria-label="Contact Section">
-      <PageHeaderContent headerText="Get in Touch" icon={<BsInfoCircleFill size={40} />} />
+      <PageHeaderContent headerText="Connect With Me" icon={<BsInfoCircleFill size={40} />} />
       <div className={styles.wrapper}>
         <Animate
           play
@@ -47,7 +46,7 @@ const Contact = () => {
           end={{ transform: 'translateX(0px)', opacity: 1 }}
         >
           <div className={styles.formContainer}>
-            <h3 className={styles.formHeader}>Let's Collaborate</h3>
+            <h3 className={styles.formHeader}>Let’s Create Something Amazing</h3>
             <form ref={form} onSubmit={sendEmail} className={styles.form} noValidate>
               <div className={styles.formGroup}>
                 <input
@@ -58,12 +57,13 @@ const Contact = () => {
                   onFocus={() => handleFocus('name')}
                   onBlur={() => handleBlur('name')}
                   placeholder=" "
-                  aria-label="Full Name"
+                  aria-label="Your Full Name"
                 />
                 <label className={`${styles.formLabel} ${focused.name ? styles.focused : ''}`}>
-                  Name
+                  Your Name
                 </label>
               </div>
+
               <div className={styles.formGroup}>
                 <input
                   type="email"
@@ -73,39 +73,43 @@ const Contact = () => {
                   onFocus={() => handleFocus('email')}
                   onBlur={() => handleBlur('email')}
                   placeholder=" "
-                  aria-label="Email Address"
+                  aria-label="Your Email Address"
                 />
                 <label className={`${styles.formLabel} ${focused.email ? styles.focused : ''}`}>
-                  Email
+                  Your Email
                 </label>
               </div>
+
               <div className={styles.formGroup}>
                 <textarea
                   name="message"
-                  rows="5"
+                  rows="6"
                   required
                   className={styles.formTextarea}
                   onFocus={() => handleFocus('message')}
                   onBlur={() => handleBlur('message')}
                   placeholder=" "
-                  aria-label="Message"
+                  aria-label="Your Message"
                 />
                 <label className={`${styles.formLabel} ${focused.message ? styles.focused : ''}`}>
-                  Message
+                  Your Message
                 </label>
               </div>
-              <button type="submit" className={styles.formButton} aria-live="polite">
-                Send Message
+
+              <button type="submit" className={styles.formButton}>
+                Send Now
               </button>
+
               <div className={styles.buttonGroup}>
                 <a
                   href="mailto:abinetzerihun0@gmail.com"
                   className={`${styles.formButton} ${styles.altButton}`}
-                  aria-label="Contact via Email"
+                  aria-label="Email Me Directly"
                 >
-                  Hire Me
+                  Hire Me Today
                 </a>
               </div>
+
               {statusMessage && (
                 <div className={`${styles.formStatusMessage} ${styles[statusType]}`}>
                   {statusMessage}
@@ -114,6 +118,7 @@ const Contact = () => {
             </form>
           </div>
         </Animate>
+
         <Animate
           play
           duration={1}
@@ -123,20 +128,8 @@ const Contact = () => {
         >
           <div className={styles.textContainer}>
             <div className={styles.text}>
-              <div className={styles.introLine}>
-                <FaHandshake className={styles.cooperationIcon} aria-hidden="true" />
-                <h1 tabIndex={-1}>Hello!</h1>
-              </div>
-              <p>
-                As a passionate developer, I’m eager to collaborate with forward-thinking teams to
-                solve real-world challenges through innovative software solutions. I value clear
-                communication, continuous improvement, and impactful design.
-              </p>
-              <p>
-                <FaUsers className={styles.cooperationIcon} aria-hidden="true" />
-                Let’s create outstanding digital experiences together. I’m just a message
-                away—feel free to connect anytime!
-              </p>
+        
+              
             </div>
           </div>
         </Animate>

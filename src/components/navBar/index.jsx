@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-import homeIcon from "../../images/evangadi_cover.jpeg";
+import homeIcon from "../../images/22.png";
 import "./styles.css";
 
 const navLinks = [

@@ -29,7 +29,7 @@ const projectsData = [
     title: 'Netflix Clone',
     description: 'A clone of the Netflix website featuring video streaming UI and responsive design.',
     technologies: ['React', 'Vite', 'react-scroll'], // Adjust technologies if needed
-    liveLink: 'https://your-netflix-clone-url.netlify.app/', // Replace with actual URL
+    liveLink: 'https://netflix-by-alex-fjuq.vercel.app//', // Replace with actual URL
     repoLink: 'https://github.com/Alaye-zerihun/Netflix-by-alex.git',
     image: projectImage3,
   },

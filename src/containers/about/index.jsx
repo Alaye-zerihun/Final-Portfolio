@@ -3,17 +3,13 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { FaRocket } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { Animate } from "react-simple-animate";
-import profileImage from "../../images/Alex2.jpg"; // Corrected import path
+import profileImage from "../../images/Abe.jpg"; // Corrected import path
 import resume from '../../containers/about/CV/My-Profile.pdf'; // Adjusted import path for resume
 import styles from "./About.module.css";
 
 const jobSummary = `
-With a Master’s degree in Computer Science from Addis Ababa University, I have cultivated a strong academic foundation...
-
-My approach is fueled by innovation and a desire to solve complex challenges. 
-I live by the principle: “The best way to predict the future is to create it.”
+I am currently advancing my skills through comprehensive full-stack web development training at Evangadi Networks, building practical expertise to complement my passion for technology. My approach is fueled by innovation and a strong desire to solve complex challenges through creative software solutions. I live by the principle: “The best way to predict the future is to create it,” and I’m committed to developing impactful and forward-thinking applications.”
 `;
-
 const About = () => (
   <section id="about" className={styles.about}>
     <div className={styles.container}>
@@ -41,9 +37,9 @@ const About = () => (
           end={{ transform: "translateX(0)", opacity: 1 }}
         >
           <div className={styles.textWrapper}>
-            <h3 className={styles.title}>
-              Embarking on the Journey of Development Mastery <FaRocket className={styles.icon} />
-            </h3>
+            <h4 className={styles.title}>
+            Committed to Growth and Innovation in Full Stack Development <FaRocket className={styles.icon} />
+            </h4>
             <p className={styles.description}>{jobSummary.trim()}</p>
             <div className={styles.buttonGroup}>
               <a

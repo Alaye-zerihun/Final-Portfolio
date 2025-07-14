@@ -3,7 +3,7 @@ import { BsInfoCircleFill } from "react-icons/bs";
 import { FaRocket } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { Animate } from "react-simple-animate";
-import profileImage from "../../images/Abe.jpg"; // Corrected import path
+import profileImage from "../../images/Abe.JPG"; // Corrected import path
 import resume from '../../containers/about/CV/My-Profile.pdf'; // Adjusted import path for resume
 import styles from "./About.module.css";
 

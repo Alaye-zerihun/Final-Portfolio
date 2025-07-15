@@ -1,49 +1,51 @@
 .testimonials {
+  background-color: #000000; /* Perfect Black */
   padding: 60px 20px;
-  background: #000000;
-  text-align: center;
-  color: #333;
+  color: #ffffff; /* White text for contrast on black background */
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #ffffff; /* Changed to white */
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #1a2a44; /* Navy Blue for contrast */
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #ffffff; /* Changed to white */
+  color: #d3d3d3; /* Light Gray for subtitle */
+  font-size: 18px;
   margin-bottom: 40px;
-  font-style: italic;
 }
 
-.testimonialsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
+.testimonialsRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px; /* Reduced gap for precise fit */
+  justify-content: center; /* Center cards in container */
 }
 
 .testimonialCard {
-  background: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff; /* White card background */
+  border: 1px solid #d3d3d3; /* Light Gray border */
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 0 calc(25% - 12px); /* Fit 4 cards exactly in 1200px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1a2a44; /* Navy Blue text inside cards */
 }
 
-.testimonialCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.imageWrapper {
+  margin-bottom: 16px;
 }
 
 .testimonialImage {
@@ -51,57 +53,101 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
-  border: 4px solid #e0e0e0;
+  border: 2px solid #1a2a44; /* Navy Blue border for photos */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .quote {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  color: #333;
   font-style: italic;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: center;
+  display: none; /* Hidden quote as per image */
 }
 
 .name {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 5px;
+  color: #1a2a44;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .role {
-  font-size: 0.9rem;
   color: #666;
-  font-weight: 500;
+  font-size: 12px;
 }
 
 .ctaButton {
   display: inline-block;
-  padding: 12px 25px;
-  background: linear-gradient(90deg, #4facfe, #00f2fe);
-  color: #fff;
+  background-color: #1a2a44; /* Navy Blue */
+  color: #ffffff; /* White text */
+  padding: 10px 20px;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 32px;
 }
 
 .ctaButton:hover {
-  background: linear-gradient(90deg, #3d9af7, #00d9e5);
-  transform: scale(1.05);
+  background-color: #2e4066;
+}
+
+@media (max-width: 1024px) {
+  .testimonialCard {
+    flex: 0 0 calc(33.33% - 10.67px); /* Fit 3 cards */
+    padding: 12px;
+  }
+
+  .testimonialImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .role {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
+    font-size: 28px;
   }
 
-  .testimonialsGrid {
-    grid-template-columns: 1fr;
+  .subtitle {
+    font-size: 16px;
   }
 
-  .ctaButton {
-    padding: 10px 20px;
+  .testimonialCard {
+    flex: 0 0 calc(50% - 8px); /* Fit 2 cards */
+    padding: 10px;
+  }
+
+  .testimonialImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .role {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonialCard {
+    flex: 0 0 calc(100% - 16px); /* Fit 1 card */
   }
 }

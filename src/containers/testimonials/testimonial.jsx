@@ -17,7 +17,7 @@ const testimonialsData = [
   {
     id: 2,
     name: 'Tewedaji Shola',
-    role: 'Fullstack Developer, Instructor & Evangadi Admin',
+    role: 'Sinor Fullstack Developer, Instructor & Evangadi Admin',
     image: testimonialImage2,
     
   },

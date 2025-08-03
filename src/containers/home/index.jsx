@@ -8,13 +8,13 @@ const Hero = () => {
     <section
       id="home"
       className={styles.hero}
-      style={{
+      style={{ 
         backgroundImage: `url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-    >
+    > 
       <div className={styles.overlay}></div>
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Alaye Zerihun</h1>

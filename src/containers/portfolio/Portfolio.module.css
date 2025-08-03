@@ -1,179 +1,63 @@
 .portfolio {
-  background: linear-gradient(135deg, #1a1a1a 100%, #2c3e50 100%); /* Applied background */
-  padding: 80px 20px;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Inter', 'Arial', sans-serif;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0a0f2b, #1a2e5a);
   color: #fff;
-  scroll-margin-top: 80px;
-  position: relative;
+  text-align: center;
   overflow: hidden;
 }
 
-.container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 1.5rem;
-  text-align: center;
-}
+.title { font-size: 2.8rem; font-weight: 800; color: #00eaff; text-shadow: 0 0 15px #00eaff; }
+.subtitle { font-size: 1.3rem; color: #b3d4ff; margin: 1rem 0 2rem; }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-.subtitle {
-  font-size: 1.25rem;
+.filterButtons { margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; }
+.filterButton {
+  background: #1a2e5a; color: #b3d4ff; border: none; padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem; cursor: pointer; border-radius: 25px; transition: 0.3s;
   font-weight: 500;
-  color: #fef3c7;
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+.filterButton:hover, .filterButton.active { background: #00eaff; color: #0a0f2b; box-shadow: 0 0 10px #00eaff; }
 
 .projectsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem; margin-bottom: 4rem;
 }
 
 .projectCard {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #1a2e5a; border-radius: 20px; padding: 2rem; transition: 0.4s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4); position: relative; overflow: hidden;
 }
-
 .projectCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.4);
+  transform: translateY(-12px); box-shadow: 0 15px 30px rgba(0,234,255,0.6);
+  background: #223d70;
 }
 
 .projectImage {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  width: 100%; height: 220px; object-fit: cover; border-radius: 15px;
+  margin-bottom: 1.5rem; filter: brightness(1.1); transition: 0.3s;
 }
+.projectCard:hover .projectImage { filter: brightness(1.3); }
 
-.projectTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.projectDescription {
-  font-size: 1rem;
-  color: #d1d5db;
-  margin-bottom: 1rem;
-}
-
-.technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.techTag {
-  background: #2d3748;
-  color: #fff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
+.projectTitle { font-size: 1.7rem; color: #00eaff; margin-bottom: 0.7rem; }
+.projectDescription { font-size: 1.1rem; color: #b3d4ff; margin-bottom: 1.2rem; }
+.technologies { margin-bottom: 1.2rem; }
+.techTag { background: #00eaff; color: #0a0f2b; padding: 0.4rem 1rem; border-radius: 15px; margin: 0 0.7rem 0.7rem 0; }
+.links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .linkButton {
-  display: inline-block;
-  padding: 0.5rem 1.5rem;
-  background: var(--accent-color, #e74c3c);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: #ff4e83; color: #fff; padding: 0.8rem 1.8rem; border-radius: 30px;
+  text-decoration: none; transition: 0.3s; font-weight: 600;
 }
+.linkButton:hover { background: #ff7098; transform: translateY(-2px); }
 
-.linkButton:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.6);
-  background: #c0392b;
+.featuredBadge {
+  background: #ff4e83; color: #fff; padding: 0.4rem 1rem; border-radius: 15px;
+  position: absolute; top: 1.5rem; left: 1.5rem; font-size: 1rem;
 }
+.certificateCard { background: #1a3c6e; }
 
 .ctaButton {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  background: var(--accent-color, #e74c3c);
-  color: #fff;
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 4px 16px rgba(231, 76, 60, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: #00eaff; color: #0a0f2b; padding: 1.2rem 2.5rem; border-radius: 30px;
+  text-decoration: none; font-weight: 700; transition: 0.4s; display: inline-block;
 }
-
-.ctaButton:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.6);
-  background: #c0392b;
-}
-
-@media (max-width: 768px) {
-  .portfolio {
-    padding: 60px 16px;
-    min-height: 80vh;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .projectsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .projectCard {
-    padding: 1.25rem;
-  }
-
-  .projectTitle {
-    font-size: 1.25rem;
-  }
-
-  .projectDescription {
-    font-size: 0.875rem;
-  }
-
-  .linkButton {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-
-  .ctaButton {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
-  }
-}
+.ctaButton.animate { animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+.ctaButton:hover { background: #00b4cc; transform: scale(1.12); }

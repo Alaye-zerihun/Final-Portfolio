@@ -17,7 +17,7 @@ const Hero = () => {
     > 
       <div className={styles.overlay}></div>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I'm Alaye Zerihun</h1>
+        <h1 className={styles.title}>Hi, I'm Abinet Zerihun</h1>
         <p className={styles.subtitle}>
           Passionate Full Stack Developer turning ideas into dynamic, user-focused web applications.
           I build fast, modern, and scalable digital experiences that make an impact.
